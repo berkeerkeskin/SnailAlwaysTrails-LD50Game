@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using UnityEngine.IO;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
     [SerializeField] private float
+        rayDistance,
         checkRadius,
         moveSpeed;
 
@@ -23,23 +26,34 @@ public class PlayerController : MonoBehaviour
         jumpTimeCounter;
 
     private bool
+        isGrabbed,
         isJumping,
         isGrounded;
+    
     [SerializeField]
-    private Transform feetPosition;
+    private Transform 
+        grabPoint,
+        rayPoint,
+        feetPosition;
+    
     [SerializeField]
     private LayerMask whatIsGround;
-    
+
+    private GameObject grabbedObject;
+    private int layerIndex;
     void Start()
     {
         Debug.Log("Start");
         rb = gameObject.GetComponent<Rigidbody2D>();
+        layerIndex = LayerMask.NameToLayer("Objects");
+        Debug.Log("layer of interactable objects: " + layerIndex);
         moveSpeed = baseMoveSpeed;
     }
 
     private void Update()
     {
         Jump();
+        Grab();
     }
 
     private void FixedUpdate()
@@ -102,6 +116,36 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
     }
-    
+
+    private void Grab()
+    {
+        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
+        //Debug.Log(hitInfo.collider.name);
+        if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
+        {
+            //Debug.Log(hitInfo.collider.gameObject.layer);
+            //Debug.Log("isGrabbed: " + isGrabbed);
+            //grabbing object
+            
+            if (Input.GetKeyDown(KeyCode.E) && grabbedObject == null && isGrabbed == false)
+            {
+                isGrabbed = true;
+                grabbedObject = hitInfo.collider.gameObject;
+                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                grabbedObject.transform.position = grabPoint.position;
+                grabbedObject.transform.SetParent(transform);
+            } 
+        }else if (hitInfo.collider == null && grabbedObject != null && isGrabbed == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && isGrabbed == true)
+            {
+                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                grabbedObject.transform.SetParent(null);
+                grabbedObject = null;
+                isGrabbed = false;
+            }
+        }
+        Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
+    }
     
 }
