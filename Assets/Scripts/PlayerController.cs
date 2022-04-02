@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         jumpTime,
         jumpForce;
 
-    private float
+     private float throwSpeed = 15f,
         maxMoveSpeed = 10f,
         baseMoveSpeed = 0.7f,
         acceleration = 1f,
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         Jump();
         Grab();
+        Throw();
     }
 
     private void FixedUpdate()
@@ -137,7 +138,7 @@ public class PlayerController : MonoBehaviour
             } 
         }else if (hitInfo.collider == null && grabbedObject != null && isGrabbed == true)
         {
-            if (Input.GetKeyDown(KeyCode.E) && isGrabbed == true)
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                 grabbedObject.transform.SetParent(null);
@@ -146,6 +147,20 @@ public class PlayerController : MonoBehaviour
             }
         }
         Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
+    }
+
+    private void Throw()
+    {
+        if (grabbedObject != null && isGrabbed == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                grabbedObject.GetComponent<Rigidbody2D>().AddForce(transform.right * throwSpeed, ForceMode2D.Impulse);
+                grabbedObject = null;
+                isGrabbed = false;
+            }
+        }
     }
     
 }
