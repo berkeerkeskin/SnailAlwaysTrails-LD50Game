@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         animator.SetFloat("Speed", Mathf.Abs(moveSpeed));
+        animator.SetBool("isGrabbed", isGrabbed);
         Jump();
         Grab();
         Throw();
@@ -159,6 +160,7 @@ public class PlayerController : MonoBehaviour
             {
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                 grabbedObject.GetComponent<Rigidbody2D>().AddForce(transform.right * throwSpeed, ForceMode2D.Impulse);
+                grabbedObject.transform.SetParent(null);
                 grabbedObject = null;
                 isGrabbed = false;
             }
