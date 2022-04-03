@@ -154,12 +154,13 @@ public class PlayerController : MonoBehaviour
 
     private void Throw()
     {
+        float directionX = Input.GetAxisRaw("Horizontal");
         if (grabbedObject != null && isGrabbed == true)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
-                grabbedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2( throwSpeed, -throwSpeed/2 ), ForceMode2D.Impulse);
+                grabbedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2( throwSpeed * directionX, -throwSpeed/2), ForceMode2D.Impulse);
                 grabbedObject.transform.SetParent(null);
                 grabbedObject = null;
                 isGrabbed = false;
