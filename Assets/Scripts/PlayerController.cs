@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask whatIsGround;
 
     private GameObject grabbedObject;
+    public Animator animator;
     private int layerIndex;
     void Start()
     {
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        animator.SetFloat("Speed", Mathf.Abs(moveSpeed));
         Jump();
         Grab();
         Throw();
