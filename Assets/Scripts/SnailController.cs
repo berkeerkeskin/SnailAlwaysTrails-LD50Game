@@ -32,7 +32,7 @@ public class SnailController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, findTarget() , speed * Time.fixedDeltaTime);
       
         float directionX = (gameObject.transform.position.x - findTarget().x) * -1f;
-        Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.x);
+        //Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.x);
         if (directionX >= 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
