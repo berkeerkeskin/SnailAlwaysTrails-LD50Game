@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,8 +22,14 @@ public class SnailController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         
-        transform.position = Vector2.MoveTowards(transform.position, findTarget() , speed * Time.deltaTime);
+        
+    }
+
+    private void FixedUpdate()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, findTarget() , speed * Time.fixedDeltaTime);
         
         float directionX = gameObject.GetComponent<Rigidbody2D>().velocity.x;
         Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.x);
@@ -33,9 +40,8 @@ public class SnailController : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        
-        
     }
+
 
     Vector3 findTarget()
     {
