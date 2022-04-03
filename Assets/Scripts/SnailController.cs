@@ -30,8 +30,8 @@ public class SnailController : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, findTarget() , speed * Time.fixedDeltaTime);
-        
-        float directionX = gameObject.GetComponent<Rigidbody2D>().velocity.x;
+      
+        float directionX = (gameObject.transform.position.x - findTarget().x) * -1f;
         Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity.x);
         if (directionX >= 0)
         {
