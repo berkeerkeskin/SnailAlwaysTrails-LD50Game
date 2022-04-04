@@ -28,6 +28,10 @@ TagManager:
   - yellow_vase
   - "ye\u015Fil vazo"
   - "sar\u0131 vazo"
+  - lock_door
+  - key_ui
+  - key
+  - snail
   layers:
   - Default
   - TransparentFX
@@ -40,7 +44,7 @@ TagManager:
   - Objects
   - Wall
   - Stairs
-  - 
+  - Snail
   - 
   - 
   - 

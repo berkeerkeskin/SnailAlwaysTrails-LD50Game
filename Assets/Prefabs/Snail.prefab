@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9166432305002969694}
   - component: {fileID: 9166432305002969695}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9854809, y: 1}
+    m_SensorSize: {x: 1.84375, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 9166432305160455547}
   - component: {fileID: 9166432305160455303}
   - component: {fileID: 9166432305160455300}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Snail
   m_TagString: snail
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9166432305233029436}
   - component: {fileID: 9166432305233029437}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SnailCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 9166432305511541928}
   - component: {fileID: 9166432305511541942}
   - component: {fileID: 9166432305511541929}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
