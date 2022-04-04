@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 using UnityEngine.IO;
+using UnityEngine.UI;
+using Image = UnityEngine.UIElements.Image;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,8 +29,9 @@ public class PlayerController : MonoBehaviour
     private bool
         isGrabbed,
         isJumping;
-
+    
     public bool
+        isKeyCollected,
         isGrounded,
         isThrown;
     [SerializeField]
@@ -132,8 +134,15 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(hitInfo.collider.gameObject.layer);
             //Debug.Log("isGrabbed: " + isGrabbed);
             //grabbing object
-            
-            if (Input.GetKeyDown(KeyCode.E) && grabbedObject == null && isGrabbed == false)
+            if (grabbedObject == null && Input.GetKeyDown(KeyCode.E) && hitInfo.collider.tag == "key")
+            {
+                isKeyCollected = true;
+                Destroy(hitInfo.collider.gameObject);
+                
+                GameObject key_ui = GameObject.FindGameObjectWithTag("key_ui");
+                key_ui.GetComponent<Image>().SetEnabled(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && grabbedObject == null && isGrabbed == false)
             {
                 isGrabbed = true;
                 grabbedObject = hitInfo.collider.gameObject;
