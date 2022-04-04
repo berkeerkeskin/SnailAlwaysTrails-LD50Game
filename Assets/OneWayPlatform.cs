@@ -29,7 +29,7 @@ public class OneWayPlatform : MonoBehaviour
             if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W))
             {
                 transform.parent.GetComponent<Collider2D>().enabled = false;
-            }else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+            }else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) )
             {
                 transform.parent.GetComponent<Collider2D>().enabled = true;
             }
