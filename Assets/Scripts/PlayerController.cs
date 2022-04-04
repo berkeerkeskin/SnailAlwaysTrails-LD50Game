@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
     private void Grab()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
+        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.up, rayDistance);
         //Debug.Log(hitInfo.collider.name);
         if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
         {
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
                 isGrabbed = false;
             }
         }
-        Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
+        Debug.DrawRay(rayPoint.position, transform.up * rayDistance);
     }
 
     private void Throw()

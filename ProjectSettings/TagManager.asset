@@ -5,6 +5,25 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
+  - cat food
+  - cat litter
+  - cereal
+  - ice cubes
+  - ice cream
+  - koli
+  - cologne
+  - soap
+  - house
+  - milk
+  - mirror
+  - oil
+  - "sar\u0131 vazo"
+  - stones
+  - sawdust
+  - water
+  - salt
+  - "ye\u015Fil vazo"
+  - coffee mag
   layers:
   - Default
   - TransparentFX
