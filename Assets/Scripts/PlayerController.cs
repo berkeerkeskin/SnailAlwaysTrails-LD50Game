@@ -27,10 +27,11 @@ public class PlayerController : MonoBehaviour
 
     private bool
         isGrabbed,
-        isJumping,
-        isGrounded;
+        isJumping;
 
-    public bool isThrown;
+    public bool
+        isGrounded,
+        isThrown;
     [SerializeField]
     private Transform 
         grabPoint,
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetFloat("Speed", Mathf.Abs(moveSpeed));
         animator.SetBool("isGrabbed", isGrabbed);
-        Jump();
+        //Jump();
         Grab();
         Throw();
     }
