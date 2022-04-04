@@ -17,14 +17,17 @@ TagManager:
   - milk
   - mirror
   - oil
-  - "sar\u0131 vazo"
   - stones
   - sawdust
   - water
   - salt
-  - "ye\u015Fil vazo"
   - coffee mag
   - Ground
+  - Door
+  - green_vase
+  - yellow_vase
+  - "ye\u015Fil vazo"
+  - "sar\u0131 vazo"
   layers:
   - Default
   - TransparentFX

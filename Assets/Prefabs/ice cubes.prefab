@@ -146,3 +146,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a55d902287f343febddca9f56838863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: {fileID: 0}
+  water: {fileID: 0}
+  milk: {fileID: 0}
+  green_vase: {fileID: 0}
+  yellow_vase: {fileID: 0}
+  ice_cubes: {fileID: -945833889, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  cologne: {fileID: 0}
+  soap: {fileID: 0}
+  coffee_mug: {fileID: 0}
+  box: {fileID: 0}
+  oil: {fileID: 0}
+  cat_food: {fileID: 0}
+  cat_litter: {fileID: 0}
+  "tala\u015F": {fileID: 0}
+  stones: {fileID: 0}
+  ice_Cream: {fileID: 0}
+  house: {fileID: 0}
+  "\xE7er\xE7eve": {fileID: 0}

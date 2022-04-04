@@ -174,6 +174,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   targetRigidbody2D: {fileID: 0}
+  water: {fileID: 1907526542, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  milk: {fileID: -732223363, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  green_vase: {fileID: 1215330000, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  yellow_vase: {fileID: 1882854388, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  ice_cubes: {fileID: -945833889, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  cologne: {fileID: 1569384863, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  soap: {fileID: 1457861084, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  coffee_mug: {fileID: 108099076, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  box: {fileID: 1308192046, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  oil: {fileID: -2063613705, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  cat_food: {fileID: 984883234, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  cat_litter: {fileID: -1557138622, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  "tala\u015F": {fileID: -1432825350, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  stones: {fileID: -1396399960, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  ice_Cream: {fileID: -1470731708, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  house: {fileID: -1042326346, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
+  "\xE7er\xE7eve": {fileID: -1432825350, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
 --- !u!50 &9166432305160455547
 Rigidbody2D:
   serializedVersion: 4
