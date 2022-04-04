@@ -62,7 +62,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1340425, y: 1}
+    m_SensorSize: {x: 1.9854809, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 9166432305160455300}
   m_Layer: 0
   m_Name: Snail
-  m_TagString: Untagged
+  m_TagString: snail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,23 +174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   targetRigidbody2D: {fileID: 0}
-  water: {fileID: 1907526542, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  milk: {fileID: -732223363, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  green_vase: {fileID: 1215330000, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  yellow_vase: {fileID: 1882854388, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  ice_cubes: {fileID: -945833889, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  cologne: {fileID: 1569384863, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  soap: {fileID: 1457861084, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  coffee_mug: {fileID: 108099076, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  box: {fileID: 1308192046, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  oil: {fileID: -2063613705, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  cat_food: {fileID: 984883234, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  cat_litter: {fileID: -1557138622, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  "tala\u015F": {fileID: -1432825350, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  stones: {fileID: -1396399960, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  ice_Cream: {fileID: -1470731708, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  house: {fileID: -1042326346, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
-  "\xE7er\xE7eve": {fileID: -1432825350, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
 --- !u!50 &9166432305160455547
 Rigidbody2D:
   serializedVersion: 4

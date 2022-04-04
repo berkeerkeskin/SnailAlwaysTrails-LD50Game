@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 using UnityEngine.IO;
 using UnityEngine.UI;
 using Image = UnityEngine.UIElements.Image;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -182,4 +183,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.tag == "snail")
+        {
+            //Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 }
