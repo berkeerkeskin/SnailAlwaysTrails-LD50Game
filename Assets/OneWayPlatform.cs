@@ -26,10 +26,14 @@ public class OneWayPlatform : MonoBehaviour
         if (col.tag == "Player")
         {
             isUp = true;
-            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W )|| Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W))
             {
                 transform.parent.GetComponent<Collider2D>().enabled = false;
-            }else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) )
+            }else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W ) && transform.parent.name == "floor"|| Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) && transform.parent.name == "floor")
+            {
+                transform.parent.GetComponent<Collider2D>().enabled = false;
+            }
+            else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) )
             {
                 transform.parent.GetComponent<Collider2D>().enabled = true;
             }
