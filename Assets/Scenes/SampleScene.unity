@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 818898220}
   m_Layer: 7
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1647,15 +1647,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 304058640904580783, guid: 7b8db3a7df6574deb8f6e280795e00df, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 304058640904580783, guid: 7b8db3a7df6574deb8f6e280795e00df, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 304058640904580783, guid: 7b8db3a7df6574deb8f6e280795e00df, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 304058640904580783, guid: 7b8db3a7df6574deb8f6e280795e00df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

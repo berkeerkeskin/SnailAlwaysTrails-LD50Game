@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
         isGrabbed,
         isJumping,
         isGrounded;
-    
+
+    public bool isThrown;
     [SerializeField]
     private Transform 
         grabPoint,
@@ -159,6 +160,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                isThrown = true;
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                 grabbedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2( throwSpeed * directionX, -throwSpeed/2), ForceMode2D.Impulse);
                 grabbedObject.transform.SetParent(null);
@@ -167,5 +169,5 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
+
 }
