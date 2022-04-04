@@ -1,14 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Objects : MonoBehaviour
 {
     private PlayerController _playerController;
+
+    public GameObject trigger;
     // Start is called before the first frame update
     void Awake()
     {
+        trigger = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Snail Trigger.prefab");
         _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
@@ -29,6 +33,8 @@ public class Objects : MonoBehaviour
         {
             if (col.collider.tag == "Ground")
             {
+                GameObject trigger_clone = Instantiate(trigger, transform.position, Quaternion.Euler(0,0,0));
+                trigger_clone.tag = gameObject.tag;
                 Destroy(gameObject);
                 _playerController.isThrown = false;
             }
