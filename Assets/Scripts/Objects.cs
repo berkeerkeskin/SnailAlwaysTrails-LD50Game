@@ -9,7 +9,6 @@ public class Objects : MonoBehaviour
     private PlayerController _playerController;
 
     public GameObject trigger;
-    
     public Sprite
         water,
         milk,
