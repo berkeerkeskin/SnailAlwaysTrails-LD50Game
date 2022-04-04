@@ -101,6 +101,12 @@ public class SnailController : MonoBehaviour
         }else if (other.tag == "water")
         {
             speed -= 0.2f;
+        }else if (other.tag == "green_vase")
+        {
+            speed -= 0.3f;
+        }else if (other.tag == "yellow_vase")
+        {
+            speed -= 0.3f;
         }
     }
 
@@ -157,6 +163,12 @@ public class SnailController : MonoBehaviour
         }else if (other.tag == "water")
         {
             speed += 0.2f;
+        }else if (other.tag == "green_vase")
+        {
+            speed += 0.3f;
+        }else if (other.tag == "yellow_vase")
+        {
+            speed += 0.3f;
         }
     }
 }
