@@ -162,6 +162,7 @@ public class PlayerController : MonoBehaviour
             {
                 isThrown = true;
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                grabbedObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 grabbedObject.GetComponent<Rigidbody2D>().AddForce(new Vector2( throwSpeed * directionX, -throwSpeed/2), ForceMode2D.Impulse);
                 grabbedObject.transform.SetParent(null);
                 grabbedObject = null;
