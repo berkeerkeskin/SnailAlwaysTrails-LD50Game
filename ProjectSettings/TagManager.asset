@@ -45,9 +45,9 @@ TagManager:
   - Wall
   - Stairs
   - Snail
-  - 
-  - 
-  - 
+  - SnailStair
+  - PlayerGround
+  - SnailGround
   - 
   - 
   - 
