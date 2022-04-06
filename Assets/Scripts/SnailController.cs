@@ -27,7 +27,7 @@ public class SnailController : MonoBehaviour
     void Update()
     {
         targetPosition = findTarget();
-        Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
+        //Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
     }
 
     private void FixedUpdate()

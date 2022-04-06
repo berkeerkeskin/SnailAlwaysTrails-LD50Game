@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 607836989769926008}
   - component: {fileID: 607836989769926010}
   - component: {fileID: 607836989769926009}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 607836990127532233}
   - component: {fileID: 607836990127532232}
   - component: {fileID: 607836990127532247}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: stairs
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Transform:
   - {fileID: 607836989769926008}
   - {fileID: 607836990131959038}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 27.721}
 --- !u!212 &607836990127532233
 SpriteRenderer:
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 607836990131959038}
   - component: {fileID: 607836990131959024}
   - component: {fileID: 607836990131959039}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: down
   m_TagString: Untagged
   m_Icon: {fileID: 0}

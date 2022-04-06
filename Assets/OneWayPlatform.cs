@@ -22,26 +22,31 @@ public class OneWayPlatform : MonoBehaviour
     {
         
     }
-
-    void OnTriggerEnter2D(Collider2D col)
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (col.tag == "Player")
+        
+        if (other.name == "Player")
         {
-            isUp = true;
-            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W )|| Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W))
-            {
-                transform.parent.GetComponent<Collider2D>().enabled = false;
-            }else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W ) && transform.parent.name == "floor"|| Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) && transform.parent.name == "floor")
-            {
-                transform.parent.GetComponent<Collider2D>().enabled = false;
-            }
-            else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) )
-            {
-                transform.parent.GetComponent<Collider2D>().enabled = true;
-            }
+                
+                if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W )  || Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W) )
+                {
+                    transform.parent.GetComponent<Collider2D>().enabled = false;
+                }//else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W ) && transform.parent.name == "floor"|| Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) && transform.parent.name == "floor")
+               // {
+                //    transform.parent.GetComponent<Collider2D>().enabled = false;
+                //}
+                else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) )
+                {
+                    
+                    transform.parent.GetComponent<Collider2D>().enabled = isUp;
+                    
+                }
+            
+           
         }
 
-        if (col.tag == "snail")
+        if (other.tag == "snail")
         {
             
             if (gameObject.name == "up" && !snail.gameObject.GetComponent<SnailController>().isPlayerInFloor)
@@ -55,6 +60,6 @@ public class OneWayPlatform : MonoBehaviour
             }   
 
             isUp = true;
-        }
+        }    
     }
 }
