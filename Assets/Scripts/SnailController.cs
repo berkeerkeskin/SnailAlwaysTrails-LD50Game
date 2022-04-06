@@ -39,8 +39,8 @@ public class SnailController : MonoBehaviour
         //exit array
         teleport_exit_array = new Transform[3];
         teleport_exit_array[0] = portal_11;
-        teleport_exit_array[0] = portal_22;
-        teleport_exit_array[0] = portal_33;
+        teleport_exit_array[1] = portal_22;
+        teleport_exit_array[2] = portal_33;
     }
 
     // Update is called once per frame
@@ -48,21 +48,21 @@ public class SnailController : MonoBehaviour
     {
         
         targetPosition = findTarget();
-        //Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
+        Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
     }
 
     private void FixedUpdate()
     {
         
-        if (targetPosition.y > -36f)
+        if (targetPosition.y > GameObject.Find("portal_01").transform.position.y && targetPosition.y < GameObject.Find("portal_12").transform.position.y)
         {
             playerFloor = 1;
         }
-        else if (targetPosition.y > -24f)
+        else if (targetPosition.y > GameObject.Find("portal_12").transform.position.y && targetPosition.y< GameObject.Find("portal_23").transform.position.y)
         {
             playerFloor = 2;
         }
-        else if (targetPosition.y > -10f)
+        else if (targetPosition.y > GameObject.Find("portal_23").transform.position.y)
         {
             playerFloor = 3;
         }
@@ -72,11 +72,11 @@ public class SnailController : MonoBehaviour
         }
         
         
-        if (transform.position.y > GameObject.Find("portal_01").transform.position.y)
+        if (transform.position.y > GameObject.Find("portal_01").transform.position.y && transform.position.y < GameObject.Find("portal_12").transform.position.y)
         {
             snailFloor = 1;
         }
-        else if (transform.position.y > GameObject.Find("portal_12").transform.position.y)
+        else if (transform.position.y > GameObject.Find("portal_12").transform.position.y && transform.position.y < GameObject.Find("portal_23").transform.position.y)
         {
             snailFloor = 2;
         }
@@ -96,7 +96,7 @@ public class SnailController : MonoBehaviour
         {
             
             transform.position = Vector3.MoveTowards(transform.position, teleport_enter_array[snailFloor].position , speed * Time.fixedDeltaTime);
-            Debug.Log(speed * Time.fixedDeltaTime);
+            //Debug.Log(speed * Time.fixedDeltaTime);
         }
         
         if (snailFloor == playerFloor)
@@ -127,21 +127,9 @@ public class SnailController : MonoBehaviour
         if (col.gameObject.tag == "snailstair")
         {
             Debug.Log(speed);
-            speed = 7f;
+            speed = 1f;
         }
-
-        if (col.collider.name == "portal_01")
-        {
-            gameObject.transform.position = teleport_exit_array[0].position;
-        }
-        if (col.collider.name == "portal_12")
-        {
-            gameObject.transform.position = teleport_exit_array[1].position;
-        }
-        if (col.collider.name == "portal_23")
-        {
-            gameObject.transform.position = teleport_exit_array[2].position;
-        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -154,6 +142,22 @@ public class SnailController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.name == "portal_01")
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            gameObject.transform.position = teleport_exit_array[0].position;
+        }
+        if (other.gameObject.name == "portal_12")
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            gameObject.transform.position = teleport_exit_array[1].position;
+        }
+        if (other.gameObject.name == "portal_23")
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            gameObject.transform.position = teleport_exit_array[2].position;
+        }
+        
         if (other.tag == "cat food")
         {
             speed -= 0.3f;
