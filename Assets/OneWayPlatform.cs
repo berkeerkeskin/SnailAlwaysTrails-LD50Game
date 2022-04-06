@@ -49,15 +49,12 @@ public class OneWayPlatform : MonoBehaviour
         if (other.tag == "snail")
         {
             
-            if (gameObject.name == "up" && !snail.gameObject.GetComponent<SnailController>().isPlayerInFloor)
+            if (gameObject.name == "Up" && !snail.gameObject.GetComponent<SnailController>().isPlayerInFloor)
             {
-                Debug.Log("stair");
+                //Debug.Log("stair");
                 transform.parent.GetComponent<Collider2D>().enabled = true;
             }
-            else if (gameObject.name == "down")
-            {
-                transform.parent.GetComponent<Collider2D>().enabled = false;
-            }   
+           
 
             isUp = true;
         }    

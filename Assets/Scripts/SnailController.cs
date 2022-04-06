@@ -16,16 +16,37 @@ public class SnailController : MonoBehaviour
     private int playerFloor;
     private int snailFloor;
 
+    private Transform[] teleport_enter_array;
+    private Transform[] teleport_exit_array;
+    
+    [SerializeField] private Transform
+        portal_01,
+        portal_11,
+        portal_12,
+        portal_22,
+        portal_23,
+        portal_33;
     void Start()
     {
         snailCollider2D = GetComponent<CircleCollider2D>();
         snailRigidbody2D = GetComponent<Rigidbody2D>();
+        //enter array
+        teleport_enter_array = new Transform[3];
+        teleport_enter_array[0] = portal_01;
+        teleport_enter_array[1] = portal_12;
+        teleport_enter_array[2] = portal_23;
         
+        //exit array
+        teleport_exit_array = new Transform[3];
+        teleport_exit_array[0] = portal_11;
+        teleport_exit_array[0] = portal_22;
+        teleport_exit_array[0] = portal_33;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         targetPosition = findTarget();
         //Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
     }
@@ -67,25 +88,17 @@ public class SnailController : MonoBehaviour
         {
             snailFloor = 0;
         }
-
+        
         if (snailFloor != playerFloor)
             isPlayerInFloor = false;
         
-        if (snailFloor != playerFloor && snailFloor == 0)
+        if (snailFloor != playerFloor)
         {
-            Vector3 position = new Vector3(-80.44f, -36f, 0f);
-            transform.position = Vector3.MoveTowards(transform.position, position , speed * Time.fixedDeltaTime*2);
+            
+            transform.position = Vector3.MoveTowards(transform.position, teleport_enter_array[snailFloor].position , speed * Time.fixedDeltaTime);
+            Debug.Log(speed * Time.fixedDeltaTime);
         }
-        if (snailFloor != playerFloor && snailFloor == 1)
-        {
-            Vector3 position = new Vector3(-82.91f, -23.3f, 0f);
-            transform.position = Vector3.MoveTowards(transform.position, position , speed * Time.fixedDeltaTime);
-        }
-        if (snailFloor != playerFloor && snailFloor == 2)
-        {
-            Vector3 position = new Vector3(-80.44f, -9.41f, 0f);
-            transform.position = Vector3.MoveTowards(transform.position, position , speed * Time.fixedDeltaTime);
-        }
+        
         if (snailFloor == playerFloor)
         {
             isPlayerInFloor = true;
@@ -101,47 +114,42 @@ public class SnailController : MonoBehaviour
                                     transform.eulerAngles = new Vector3(0, 180, 0);
                         }
         }
-        
-        
-        
-     
     }
-
+    
+    Vector3 findTarget()
+    {
+        targetPosition = GameObject.FindWithTag("Player").transform.position;
+        return targetPosition;
+    }
+    
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.name == "snailstair")
+        if (col.gameObject.tag == "snailstair")
         {
-            speed = 10f;
+            Debug.Log(speed);
+            speed = 7f;
         }
 
         if (col.collider.name == "portal_01")
         {
-            Vector3 position = GameObject.Find("portal_11").transform.position;
-            gameObject.transform.position = position;
+            gameObject.transform.position = teleport_exit_array[0].position;
         }
         if (col.collider.name == "portal_12")
         {
-            Vector3 position = GameObject.Find("portal_22").transform.position;
-            gameObject.transform.position = position;
+            gameObject.transform.position = teleport_exit_array[1].position;
         }
         if (col.collider.name == "portal_23")
         {
-            Vector3 position = GameObject.Find("portal_33").transform.position;
-            gameObject.transform.position = position;
+            gameObject.transform.position = teleport_exit_array[2].position;
         }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.collider.name == "snailstair")
+        if (other.transform.name == "Up")
         {
             speed = 1f;
         }
-    }
-    Vector3 findTarget()
-    {
-        targetPosition = GameObject.FindWithTag("Player").transform.position;
-        return targetPosition;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
