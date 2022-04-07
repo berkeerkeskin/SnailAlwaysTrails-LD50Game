@@ -13,8 +13,8 @@ public class SnailController : MonoBehaviour
     public Rigidbody2D targetRigidbody2D;
     private Vector3 targetPosition;
     public bool isPlayerInFloor;
-    private int playerFloor;
-    private int snailFloor;
+    public int playerFloor;
+    public int snailFloor;
 
     private Transform[] teleport_enter_array;
     private Transform[] teleport_exit_array;
@@ -48,8 +48,8 @@ public class SnailController : MonoBehaviour
     {
         
         targetPosition = findTarget();
-     //   Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
-     //Debug.Log(speed);
+        //Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
+        //Debug.Log(speed);
     }
 
     private void FixedUpdate()
@@ -220,7 +220,7 @@ public class SnailController : MonoBehaviour
             speed -= 0.3f;
         }
         
-        Debug.Log("slow downed to: " + speed);
+        //Debug.Log("slow downed to: " + speed);
     }
     
     private void OnTriggerExit2D(Collider2D other)
@@ -283,6 +283,6 @@ public class SnailController : MonoBehaviour
         {
             speed += 0.3f;
         }
-        Debug.Log("speed up to: " + speed);
+        //Debug.Log("speed up to: " + speed);
     }
 }
