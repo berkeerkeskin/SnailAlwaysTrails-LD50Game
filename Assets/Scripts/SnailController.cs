@@ -135,14 +135,16 @@ public class SnailController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.transform.name == "Up")
+        
+        if (other.transform.tag== "snailstair")
         {
-            speed = 1f;
+            speed = 1.5f;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.gameObject.name == "portal_01")
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -217,6 +219,8 @@ public class SnailController : MonoBehaviour
         {
             speed -= 0.3f;
         }
+        
+        Debug.Log("slow downed to: " + speed);
     }
     
     private void OnTriggerExit2D(Collider2D other)
@@ -279,5 +283,6 @@ public class SnailController : MonoBehaviour
         {
             speed += 0.3f;
         }
+        Debug.Log("speed up to: " + speed);
     }
 }
