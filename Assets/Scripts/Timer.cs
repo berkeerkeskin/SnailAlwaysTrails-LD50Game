@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text counterText;
     
-    private float startTime;
+    public static float startTime;
 
     void Start () {
         counterText = GetComponent<TMP_Text>() as TMP_Text;

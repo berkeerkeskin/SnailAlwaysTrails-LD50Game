@@ -151,6 +151,11 @@ public class PlayerController : MonoBehaviour
                 GameObject key_ui = GameObject.FindGameObjectWithTag("key_ui");
                 key_ui.GetComponent<Image>().SetEnabled(true);
             }
+            if (grabbedObject == null && Input.GetKeyDown(KeyCode.E) && hitInfo.collider.tag == "Clock")
+            {
+                Timer.startTime += 5;
+                Destroy(hitInfo.collider.gameObject);
+            }
             else if (Input.GetKeyDown(KeyCode.E) && grabbedObject == null && isGrabbed == false)
             {
                 isGrabbed = true;
