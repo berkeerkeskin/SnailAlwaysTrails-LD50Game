@@ -27,14 +27,18 @@ public class PlayerController : MonoBehaviour
         acceleration = 1f,
         jumpTimeCounter;
 
-    private bool
-        isGrabbed,
-        isJumping;
-    
+     private bool
+         isGrabbed,
+         isJumping;
+     
     public bool
         isKeyCollected,
         isGrounded,
         isThrown;
+
+    public static int scoreMin, scoreSec;
+    public static bool isDead;
+    
     [SerializeField]
     private Transform 
         grabPoint,
@@ -50,6 +54,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Debug.Log("Start");
+        // Timer vals
+        isDead = false;
+        scoreMin = 0;
+        scoreSec = 0;
         rb = gameObject.GetComponent<Rigidbody2D>();
         layerIndex = LayerMask.NameToLayer("Objects");
         Debug.Log("layer of interactable objects: " + layerIndex);
@@ -188,6 +196,7 @@ public class PlayerController : MonoBehaviour
         if (col.collider.tag == "snail")
         {
             //Destroy(gameObject);
+            isDead = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

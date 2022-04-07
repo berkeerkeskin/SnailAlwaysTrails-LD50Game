@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame ()
     {
+        PlayerController.scoreMin = 0;
+        PlayerController.scoreSec = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

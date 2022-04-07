@@ -2,20 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     public TMP_Text counterText;
-    public float seconds, minutes;
+    
+    private float startTime;
 
     void Start () {
         counterText = GetComponent<TMP_Text>() as TMP_Text;
+        startTime = Time.time;
+
     }
 
-    void Update () {
-        minutes = (int)(Time.time/60f);
-        seconds = (int)(Time.time % 60f);
-        counterText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+    void Update ()
+    {
+        float t = Time.time - startTime;
+        if (!PlayerController.isDead)
+        {
+            PlayerController.scoreMin = (int)(t /60f);
+            PlayerController.scoreSec = (int) (t % 60f);
+
+        }
+        counterText.text = PlayerController.scoreMin.ToString("00") + ":" + PlayerController.scoreSec.ToString("00");
+       
     }
 }
