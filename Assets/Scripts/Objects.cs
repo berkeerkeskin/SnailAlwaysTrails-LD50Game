@@ -7,7 +7,7 @@ using UnityEngine;
 public class Objects : MonoBehaviour
 {
     private PlayerController _playerController;
-
+    [SerializeField]
     public GameObject trigger;
     public Sprite
         water,
@@ -32,7 +32,6 @@ public class Objects : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        trigger = PrefabUtility.LoadPrefabContents("Assets/Prefabs/SnailTrigger.prefab");
         _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a55d902287f343febddca9f56838863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 0}
+  trigger: {fileID: 2189409343250664351, guid: 94a2364e26fac4fd881e85d468229726, type: 3}
   water: {fileID: 0}
   milk: {fileID: 0}
   green_vase: {fileID: 0}
@@ -163,4 +163,5 @@ MonoBehaviour:
   stones: {fileID: 0}
   ice_Cream: {fileID: 0}
   house: {fileID: 0}
+  cereal: {fileID: 0}
   "\xE7er\xE7eve": {fileID: 0}
