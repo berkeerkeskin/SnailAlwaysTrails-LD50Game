@@ -1672,7 +1672,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8165331384255862199, guid: 3ac3b9552fa35443e84eea8c8873397c, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac3b9552fa35443e84eea8c8873397c, type: 3}
 --- !u!1 &374572049
@@ -2528,7 +2529,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8165331384255862199, guid: 3ac3b9552fa35443e84eea8c8873397c, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac3b9552fa35443e84eea8c8873397c, type: 3}
 --- !u!1 &579501244
@@ -5854,7 +5856,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9584275, y: 1}
+    m_SensorSize: {x: 2.1024034, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5983,7 +5985,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8165331384255862199, guid: 3ac3b9552fa35443e84eea8c8873397c, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac3b9552fa35443e84eea8c8873397c, type: 3}
 --- !u!1 &1689695124
@@ -8652,7 +8655,7 @@ PrefabInstance:
       objectReference: {fileID: 264279040}
     - target: {fileID: 9166432305002969695, guid: d1452658e17b94e76a669459f964ab55, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.84375
+      value: 2.1024034
       objectReference: {fileID: 0}
     - target: {fileID: 9166432305160455300, guid: d1452658e17b94e76a669459f964ab55, type: 3}
       propertyPath: m_UsedByEffector
