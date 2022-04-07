@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
-  clip: {fileID: 0}
   water: {fileID: 0}
   milk: {fileID: 0}
   green_vase: {fileID: 0}
@@ -159,7 +158,7 @@ MonoBehaviour:
   coffee_mug: {fileID: 0}
   box: {fileID: 0}
   oil: {fileID: 0}
-  cat_food: {fileID: 0}
+  cat_food: {fileID: 984883234, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
   cat_litter: {fileID: -1557138622, guid: e9842e67804554a6bb1a3323cc7b87fe, type: 3}
   "tala\u015F": {fileID: 0}
   stones: {fileID: 0}
