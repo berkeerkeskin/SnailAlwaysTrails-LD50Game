@@ -32,7 +32,7 @@ public class Objects : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        trigger = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Snail Trigger.prefab");
+        trigger = PrefabUtility.LoadPrefabContents("Assets/Prefabs/SnailTrigger.prefab");
         _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 

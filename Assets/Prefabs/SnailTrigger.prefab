@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -344626614357816973}
   - component: {fileID: 3995017312720421838}
   m_Layer: 0
-  m_Name: Snail Trigger
+  m_Name: SnailTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
