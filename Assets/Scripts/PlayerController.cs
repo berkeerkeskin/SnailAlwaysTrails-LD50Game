@@ -44,9 +44,10 @@ public class PlayerController : MonoBehaviour
         grabPoint,
         rayPoint,
         feetPosition;
-    
-    [SerializeField]
-    private LayerMask whatIsGround;
+
+    [SerializeField] private LayerMask
+        whatIsObjects,
+        whatIsGround;
 
     private GameObject grabbedObject;
     public Animator animator;
@@ -136,7 +137,7 @@ public class PlayerController : MonoBehaviour
 
     private void Grab()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.up, rayDistance);
+        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.up, rayDistance, whatIsObjects);
         //Debug.Log(hitInfo.collider.name);
         if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
         {
