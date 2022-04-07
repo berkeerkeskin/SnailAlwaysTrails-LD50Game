@@ -138,9 +138,15 @@ MonoBehaviour:
   moveSpeed: 0
   jumpTime: 0.35
   jumpForce: 8
+  isKeyCollected: 0
+  isGrounded: 0
+  isThrown: 0
   grabPoint: {fileID: 6033329741118854036}
   rayPoint: {fileID: 6033329742862331965}
   feetPosition: {fileID: 6033329743094728465}
+  whatIsObjects:
+    serializedVersion: 2
+    m_Bits: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128

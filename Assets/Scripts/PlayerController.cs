@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
         whatIsObjects,
         whatIsGround;
 
+    [SerializeField] private GameObject floatingPoint;
+
     private GameObject grabbedObject;
     public Animator animator;
     private int layerIndex;
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(hitInfo.collider.name);
         if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
         {
+            floatingPoint.GetComponent<TextMesh>().text = "PRESS E";
             //Debug.Log(hitInfo.collider.gameObject.layer);
             //Debug.Log("isGrabbed: " + isGrabbed);
             //grabbing object
@@ -167,6 +170,7 @@ public class PlayerController : MonoBehaviour
             } 
         }else if (hitInfo.collider == null && grabbedObject != null && isGrabbed == true)
         {
+            floatingPoint.GetComponent<TextMesh>().text = "";
             if (Input.GetKeyDown(KeyCode.E))
             {
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
@@ -175,6 +179,9 @@ public class PlayerController : MonoBehaviour
                 grabbedObject = null;
                 isGrabbed = false;
             }
+        }else if (hitInfo.collider == null && grabbedObject == null)
+        {
+            floatingPoint.GetComponent<TextMesh>().text = "";
         }
         Debug.DrawRay(rayPoint.position, transform.up * rayDistance);
     }
@@ -186,6 +193,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                floatingPoint.GetComponent<TextMesh>().text = "";
                 isThrown = true;
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                 grabbedObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
