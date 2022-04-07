@@ -8659,6 +8659,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9166432305160455302, guid: d1452658e17b94e76a669459f964ab55, type: 3}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166432305160455302, guid: d1452658e17b94e76a669459f964ab55, type: 3}
       propertyPath: portal_01
       value: 
       objectReference: {fileID: 374572051}

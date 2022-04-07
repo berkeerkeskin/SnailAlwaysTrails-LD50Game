@@ -48,7 +48,8 @@ public class SnailController : MonoBehaviour
     {
         
         targetPosition = findTarget();
-        Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
+     //   Debug.Log("player floor" + playerFloor + " snail " + snailFloor + " isplayer " + isPlayerInFloor);
+     Debug.Log(speed);
     }
 
     private void FixedUpdate()
@@ -160,7 +161,7 @@ public class SnailController : MonoBehaviour
         
         if (other.tag == "cat food")
         {
-            speed -= 0.3f;
+            speed -= 0.4f;
         }else if (other.tag == "cat litter")
         {
             speed -= 0.4f;
@@ -169,46 +170,46 @@ public class SnailController : MonoBehaviour
             speed -= 0.3f;
         }else if (other.tag == "coffee mag")
         {
-            speed -= 0.4f;
+            speed -= 0.5f;
         }else if (other.tag == "cologne")
         {
-            speed -= 0.2f;
+            speed -= 0.7f;
         }else if (other.tag == "house")
         {
             speed -= 0.5f;
         }else if (other.tag == "ice cream")
         {
-            speed += 0.2f;
+            speed += 0.4f;
         }else if (other.tag == "ice cubes")
         {
-            speed += 0.5f;
+            speed += 0.7f;
         }else if (other.tag == "koli")
         {
             speed -= 0.5f;
         }else if (other.tag == "milk")
         {
-            speed -= 0.2f;
+            speed -= 0.3f;
         }else if (other.tag == "mirror")
         {
             speed -= 0.4f;
         }else if (other.tag == "oil")
         {
-            speed += 0.3f;
+            speed += 0.8f;
         }else if (other.tag == "salt")
         {
-            speed -= 0.1f;
+            speed -= 0.7f;
         }else if (other.tag == "sawdust")
         {
             speed -= 0.5f;
         }else if (other.tag == "soap")
         {
-            speed += 0.3f;
+            speed += 0.7f;
         }else if (other.tag == "stones")
         {
             speed -= 0.5f;
         }else if (other.tag == "water")
         {
-            speed -= 0.2f;
+            speed -= 0.4f;
         }else if (other.tag == "green_vase")
         {
             speed -= 0.3f;
@@ -220,63 +221,10 @@ public class SnailController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "cat food")
+        Debug.Log(other.tag);
+        if (other.gameObject.layer.ToString() == "Objects")
         {
-            speed += 0.3f;
-        }else if (other.tag == "cat litter")
-        {
-            speed += 0.4f;
-        }else if (other.tag == "cereal")
-        {
-            speed += 0.3f;
-        }else if (other.tag == "coffee mag")
-        {
-            speed += 0.4f;
-        }else if (other.tag == "cologne")
-        {
-            speed += 0.2f;
-        }else if (other.tag == "house")
-        {
-            speed += 0.5f;
-        }else if (other.tag == "ice cream")
-        {
-            speed -= 0.2f;
-        }else if (other.tag == "ice cubes")
-        {
-            speed -= 0.5f;
-        }else if (other.tag == "koli")
-        {
-            speed += 0.5f;
-        }else if (other.tag == "milk")
-        {
-            speed += 0.2f;
-        }else if (other.tag == "mirror")
-        {
-            speed += 0.4f;
-        }else if (other.tag == "oil")
-        {
-            speed -= 0.3f;
-        }else if (other.tag == "salt")
-        {
-            speed += 0.1f;
-        }else if (other.tag == "sawdust")
-        {
-            speed += 0.5f;
-        }else if (other.tag == "soap")
-        {
-            speed -= 0.3f;
-        }else if (other.tag == "stones")
-        {
-            speed += 0.5f;
-        }else if (other.tag == "water")
-        {
-            speed += 0.2f;
-        }else if (other.tag == "green_vase")
-        {
-            speed += 0.3f;
-        }else if (other.tag == "yellow_vase")
-        {
-            speed += 0.3f;
+            speed = 1.5f;
         }
     }
 }
