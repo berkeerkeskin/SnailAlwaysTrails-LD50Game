@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     private Collider2D boxCollider2D;
     private Collider2D playerCollider;
     private GameObject player;
+    private PlayerController _playerController;
     
     private bool isPlayerNear;
     private bool isOpen;
@@ -17,6 +18,7 @@ public class Door : MonoBehaviour
     {
         boxCollider2D = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void Start()
@@ -31,6 +33,7 @@ public class Door : MonoBehaviour
             animator.SetTrigger("isOpened");
             isOpen = true;
             Destroy(boxCollider2D);
+            _playerController.isKeyCollected = false;
         } else if (Input.GetKeyDown(KeyCode.F) && isPlayerNear && gameObject.tag == "Door")
         {
             Debug.Log("F pressed");
