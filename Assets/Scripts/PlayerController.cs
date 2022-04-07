@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
             }
             if (grabbedObject == null && Input.GetKeyDown(KeyCode.E) && hitInfo.collider.tag == "Clock")
             {
-                Timer.startTime += 5;
+                Timer.startTime -= 5;
                 Destroy(hitInfo.collider.gameObject);
             }
             else if (Input.GetKeyDown(KeyCode.E) && grabbedObject == null && isGrabbed == false)
