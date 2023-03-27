@@ -12,6 +12,6 @@ You can throw objects to slow down the snail but not every object may not work a
 The goal is avoid from snail as long as you can, every time you fail restart and try again for better score!<br />
 
 # Screenshots:
-![s1](https://github.com/caganoduncuoglu/LD50Game/blob/main/Assets/Assets/Snail%20Always%20Trails/Screen%20Shot%202022-04-07%20at%2020.30.42.png)
+![s1](https://github.com/berkeerkeskin/SnailAlwaysTrails-LD50Game/blob/main/Assets/Assets/menu%20art.png)
 ![s2](https://github.com/caganoduncuoglu/LD50Game/blob/main/Assets/Assets/Snail%20Always%20Trails/Screen%20Shot%202022-04-07%20at%2020.34.01.png)
 ![s3](https://github.com/caganoduncuoglu/LD50Game/blob/main/Assets/Assets/Snail%20Always%20Trails/Screen%20Shot%202022-04-07%20at%2020.32.10.png)
